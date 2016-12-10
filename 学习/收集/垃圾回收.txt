@@ -1,0 +1,4 @@
+1.标记-清除算法 (mark-sweep)
+2.标记-压缩算法 (mark-compact)
+3.复制算法      (copying)
+4.引用计数算法  (reference counting)

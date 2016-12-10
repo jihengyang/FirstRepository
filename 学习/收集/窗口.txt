@@ -1,0 +1,3 @@
+ViewRoot本质就是个Handler，用以在应用端接收WMS的指令时进行异步执行。每个DecorView都关联一个ViewRoot，保存在WindowManagerImpl中。
+
+Activity(PhoneWindow、DecorView，三者概念相同，因为是一对一关系的，之后用Actvity代指三者)是如何和WMS进行通讯的?通讯的关键在ViewRoot，其内部创建并保存了一个类型为W的变量mWindow，W是一个Binder对象，继承了IWindown接口，之后，ViewRoot会将该对象传送至WMS，如前面所知，只要有了Binder对象，进程间通信就非常简单了。WMS端同时用W对象作为识别Activity的标志。

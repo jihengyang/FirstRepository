@@ -1,0 +1,12 @@
+1.自定义类加载器的作用就是加载外部的class文件用的，别无他用。
+2.判断两个类是否相同：需要判断类的全限定名称和类加载器是否相同。
+3.父委托机制的好处是防止恶意替换java的核心安全类。
+
+
+简单的反射
+Class<?> class1 = Class.forName("model.Student");
+		Constructor<?> constructor = class1.getConstructor(String.class);
+		Object object = constructor.newInstance("小学生");
+		Method method = class1.getDeclaredMethod("getName");
+		method.setAccessible(true);
+		System.out.println((String)(method.invoke(object)));
